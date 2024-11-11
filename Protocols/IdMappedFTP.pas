@@ -396,7 +396,7 @@ end;
 {TODO: procedure TIdMappedFtpContext.FreeDataChannelThread;
 Begin
   if Assigned(FDataChannelThread) then begin
-    //TODO: здесь надо Disconnect
+    //TODO: Р·РґРµСЃСЊ РЅР°РґРѕ Disconnect
     FDataChannelThread.Terminate;
     FDataChannelThread:=NIL;
   end;

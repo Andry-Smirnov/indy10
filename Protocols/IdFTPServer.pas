@@ -286,14 +286,14 @@
 
   added function GetReplyClass, this function returns the class of reply this
   server class uses, this is because in dotnet there can be no code before the
-  inherited in the constructor ( that is used mow to determine the reply class )
-   
+  inherited in the constructor ( that is used mow to determine theÂ reply class )
+  Â 
   changed System.Delete to IdDelete (in coreglobal) because System.Delete is
   not in dotnet
-   
+  Â 
   SplitLines is not enabled in dotnet yet, so i made it a todo, make sure to
-  enable it and remove the todo if you check it in 
-   
+  enable it and remove the todo if you check it inÂ 
+  Â 
 
   Rev 1.85    1/2/2004 1:02:08 AM  JPMugaas
   Made comment about why the SYST descriptor is determined the way it is.
@@ -2184,7 +2184,7 @@ begin
 
   //These two commands are not in RFC's or drafts
   // but are documented in:
-  // GlobalSCAPE Secure FTP Server User’s Guide
+  // GlobalSCAPE Secure FTP Server Userâ€™s Guide
   //XCRC "[filename]" [start] [finish]
   LCmd := CommandHandlers.Add;
   LCmd.Command := 'XCRC';   {Do not translate}
