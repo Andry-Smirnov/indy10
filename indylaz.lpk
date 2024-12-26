@@ -21,6 +21,9 @@
         </SyntaxOptions>
       </Parsing>
       <Other>
+        <CompilerMessages>
+          <IgnoredMessages idx5024="True"/>
+        </CompilerMessages>
         <CustomOptions Value="$(IDEBuildOptions)
 -dDEBUG"/>
       </Other>
