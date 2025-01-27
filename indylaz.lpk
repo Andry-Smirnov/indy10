@@ -20,7 +20,18 @@
           <UseAnsiStrings Value="False"/>
         </SyntaxOptions>
       </Parsing>
+      <CodeGeneration>
+        <Checks>
+          <IOChecks Value="True"/>
+          <RangeChecks Value="True"/>
+          <OverflowChecks Value="True"/>
+        </Checks>
+      </CodeGeneration>
       <Other>
+        <Verbosity>
+          <ShowLineNum Value="True"/>
+          <ShowCond Value="True"/>
+        </Verbosity>
         <CompilerMessages>
           <IgnoredMessages idx5024="True"/>
         </CompilerMessages>
