@@ -621,7 +621,7 @@ end;
 
 destructor TIdStack.Destroy;
 begin
-  FreeAndNil(FLocalAddresses);
+  if FreeAndNil(FLocalAddresses);
   inherited Destroy;
 end;
 
