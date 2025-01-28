@@ -621,7 +621,8 @@ end;
 
 destructor TIdStack.Destroy;
 begin
-  if FreeAndNil(FLocalAddresses);
+  if Assigned(FLocalAddresses) then
+    FreeAndNil(FLocalAddresses);
   inherited Destroy;
 end;
 
@@ -635,6 +636,7 @@ function TIdStack.Accept(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   Result := Accept(ASocket, VIP, VPort, LIPVersion);
 end;
 
@@ -643,6 +645,7 @@ procedure TIdStack.GetPeerName(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   GetPeerName(ASocket, VIP, VPort, LIPVersion);
 end;
 
@@ -651,6 +654,7 @@ procedure TIdStack.GetSocketName(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   GetSocketName(ASocket, VIP, VPort, LIPVersion);
 end;
 
