@@ -286,6 +286,7 @@ function TIdPOP3.CheckMessages: Integer;
 var
   LIgnore: Int64;
 begin
+  Result := 0;
   // RLebeau: for backwards compatibility, raise an exception if STAT fails
   if not RetrieveStats(Result, LIgnore) then begin
     RaiseExceptionForLastCmdResult;
@@ -435,12 +436,14 @@ var
   LIgnore: Integer;
 begin
   // RLebeau: for backwards compatibility, return -1 if STAT fails
+  Result := -1;
+  LIgnore := 0;
   try
     if not RetrieveStats(LIgnore, Result) then begin
       RaiseExceptionForLastCmdResult;
     end;
   except
-    Result := -1;
+    //Result := -1;
   end;
 end;
 
