@@ -26,17 +26,24 @@
           <RangeChecks Value="True"/>
           <OverflowChecks Value="True"/>
         </Checks>
+        <Optimizations>
+          <OptimizationLevel Value="0"/>
+        </Optimizations>
       </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <DebugInfoType Value="dsDwarf3"/>
+        </Debugging>
+      </Linking>
       <Other>
         <Verbosity>
           <ShowLineNum Value="True"/>
+          <ShowUsedFiles Value="True"/>
           <ShowCond Value="True"/>
         </Verbosity>
         <CompilerMessages>
-          <IgnoredMessages idx5024="True"/>
+          <IgnoredMessages idx5091="True" idx5057="True" idx5024="True" idx5023="True"/>
         </CompilerMessages>
-        <CustomOptions Value="$(IDEBuildOptions)
--dDEBUG"/>
       </Other>
     </CompilerOptions>
     <Description Value="Components for networking, Web services, protocols (SMTP, POP3, IMAP, NNTP, HTTP, FTP), sockets."/>
