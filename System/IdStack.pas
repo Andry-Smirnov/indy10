@@ -621,8 +621,13 @@ end;
 
 destructor TIdStack.Destroy;
 begin
-  if Assigned(FLocalAddresses) then
+  try
+    {$HINT FIXIT: External Error}
+    // Скорее всего ошибка происходит где-то при освобождении ресурсов типа TObserver
+    // В методе Destroy родительских классов, для TStrings этих классов два
     FreeAndNil(FLocalAddresses);
+  except
+  end;
   inherited Destroy;
 end;
 
