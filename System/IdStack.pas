@@ -621,7 +621,13 @@ end;
 
 destructor TIdStack.Destroy;
 begin
-  FreeAndNil(FLocalAddresses);
+  try
+    {$HINT FIXIT: External Error}
+    // Скорее всего ошибка происходит где-то при освобождении ресурсов типа TObserver
+    // В методе Destroy родительских классов, для TStrings этих классов два
+    FreeAndNil(FLocalAddresses);
+  except
+  end;
   inherited Destroy;
 end;
 
@@ -635,6 +641,7 @@ function TIdStack.Accept(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   Result := Accept(ASocket, VIP, VPort, LIPVersion);
 end;
 
@@ -643,6 +650,7 @@ procedure TIdStack.GetPeerName(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   GetPeerName(ASocket, VIP, VPort, LIPVersion);
 end;
 
@@ -651,6 +659,7 @@ procedure TIdStack.GetSocketName(ASocket: TIdStackSocketHandle; var VIP: string;
 var
   LIPVersion: TIdIPVersion;
 begin
+  LIPVersion := Id_IPv4;
   GetSocketName(ASocket, VIP, VPort, LIPVersion);
 end;
 

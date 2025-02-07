@@ -20,9 +20,30 @@
           <UseAnsiStrings Value="False"/>
         </SyntaxOptions>
       </Parsing>
+      <CodeGeneration>
+        <Checks>
+          <IOChecks Value="True"/>
+          <RangeChecks Value="True"/>
+          <OverflowChecks Value="True"/>
+        </Checks>
+        <Optimizations>
+          <OptimizationLevel Value="0"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <DebugInfoType Value="dsDwarf3"/>
+        </Debugging>
+      </Linking>
       <Other>
-        <CustomOptions Value="$(IDEBuildOptions)
--dDEBUG"/>
+        <Verbosity>
+          <ShowLineNum Value="True"/>
+          <ShowUsedFiles Value="True"/>
+          <ShowCond Value="True"/>
+        </Verbosity>
+        <CompilerMessages>
+          <IgnoredMessages idx6058="True" idx5091="True" idx5057="True" idx5024="True" idx5023="True"/>
+        </CompilerMessages>
       </Other>
     </CompilerOptions>
     <Description Value="Components for networking, Web services, protocols (SMTP, POP3, IMAP, NNTP, HTTP, FTP), sockets."/>
