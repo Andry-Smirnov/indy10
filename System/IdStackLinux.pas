@@ -628,7 +628,7 @@ begin
     ASocket, ABuffer, ABufferLength, AFlags or Id_MSG_NOSIGNAL,
     {$IFDEF KYLIX}Psockaddr(@LAddr)^{$ELSE}Psockaddr(@LAddr){$ENDIF},
     LiSize);
-  end;
+  //end;
   if LiSize = Id_SOCKET_ERROR then begin
     // TODO: move this into RaiseLastSocketError directly
     if WSGetLastError() = Id_WSAEMSGSIZE then begin
