@@ -78,7 +78,7 @@
   -Removed IdBaseThread
   -Threads now have default names
 
-  Rev 1.12    12.9.2003 Ð³. 16:42:08  DBondzhev
+  Rev 1.12    12.9.2003 ã. 16:42:08  DBondzhev
   Fixed AV when exception is raised in BeforeRun and thread is terminated
   before Start is compleated
 

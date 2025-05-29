@@ -85,7 +85,7 @@ interface
 uses
   Classes,
   IdContext, IdAssignedNumbers, IdMappedPortTCP, IdStack, IdYarn,
-  IdTCPConnection,IdTCPServer, IdThread, IdGlobal;
+  IdTCPConnection, IdThread, IdGlobal;
 
 type
   TIdMappedFtpDataThread = class;
@@ -163,7 +163,7 @@ type
 implementation
 
 uses
-  IdGlobalProtocols, IdIOHandlerSocket, IdException,
+  IdGlobalProtocols, IdIOHandlerSocket,
   IdResourceStringsProtocols, IdTcpClient, IdSimpleServer, IdStackConsts,
   SysUtils;
 
@@ -396,7 +396,7 @@ end;
 {TODO: procedure TIdMappedFtpContext.FreeDataChannelThread;
 Begin
   if Assigned(FDataChannelThread) then begin
-    //TODO: Р·РґРµСЃСЊ РЅР°РґРѕ Disconnect
+    //TODO: здесь надо Disconnect
     FDataChannelThread.Terminate;
     FDataChannelThread:=NIL;
   end;

@@ -31,18 +31,18 @@
   instead of ToBytes() and AppendBytes().
 
 
-    Rev 1.37    2005/1/25 Â¤UÂ¤Ð˜ 12:25:26  DChang
+    Rev 1.37    2005/1/25 ¤U¤È 12:25:26  DChang
   Modify UpdateTree method, make the NS record can be save in the lower level
   node.
 
 
-    Rev 1.36    2005/1/5 Â¤UÂ¤Ð˜ 04:21:06  DChang    Version: 1.36
+    Rev 1.36    2005/1/5 ¤U¤È 04:21:06  DChang    Version: 1.36
   Fix parsing procedure while processing TXT record, in pass version, double
   quota will not be processed, but now, any charector between 2 double quotas
   will be treated as TXT message.
 
 
-    Rev 1.35    2004/12/15 Â¤UÂ¤Ð˜ 12:05:26  DChang    Version: 1.35
+    Rev 1.35    2004/12/15 ¤U¤È 12:05:26  DChang    Version: 1.35
   1. Move UpdateTree to public section.
   2. add DoUDPRead of TIdDNSServer.
   3. Fix TIdDNS_ProcessThread.CompleteQuery and
@@ -84,12 +84,12 @@
   Removed local variable from TIdDNS_ProcessThread.SendData(), not needed
 
 
-    Rev 1.26    2004/7/21 Â¤UÂ¤Ð˜ 06:37:48  DChang
+    Rev 1.26    2004/7/21 ¤U¤È 06:37:48  DChang
   Fix compile error in TIdDNS_ProcessThread.SendData, and mark a case statment
   to comments in TIdDNS_ProcessThread.SaveToCache.
 
 
-    Rev 1.25    2004/7/19 Â¤UÂ¤Ð˜ 09:55:52  DChang
+    Rev 1.25    2004/7/19 ¤U¤È 09:55:52  DChang
   1. Move all textmoderecords to IdDNSCommon.pas
   2. Making DNS Server load the domain definition file while DNS Server
      component is active.
@@ -163,7 +163,7 @@
   Compile todos
 
 
-    Rev 1.10    2003/5/14 Â¤WÂ¤Ð˜ 01:17:36  DChang
+    Rev 1.10    2003/5/14 ¤W¤È 01:17:36  DChang
   Fix a flag named denoted in the function which check if a domain correct.
   Update the logic of UpdateTree functions (make them unified).
   Update the TextRecord function of all TIdRR_ classes, it checks if the RRName
@@ -171,22 +171,22 @@
   to RRName.
 
 
-    Rev 1.9    2003/5/10 Â¤WÂ¤Ð˜ 01:09:42  DChang
+    Rev 1.9    2003/5/10 ¤W¤È 01:09:42  DChang
   Patch the domainlist update when axfr action.
 
 
-    Rev 1.8    2003/5/9 Â¤WÂ¤Ð˜ 10:03:36  DChang
+    Rev 1.8    2003/5/9 ¤W¤È 10:03:36  DChang
   Modify the sequence of records. To make sure when we resolve MX record, the
   mail host A record can be additional record section.
 
 
-    Rev 1.7    2003/5/8 Â¤UÂ¤Ð˜ 08:11:34  DChang
+    Rev 1.7    2003/5/8 ¤U¤È 08:11:34  DChang
   Add TIdDNSMap, TIdDomainNameServerMapping to monitor primary DNS, and
   detecting if the primary DNS record changed, it will update automatically if
   necessary.
 
 
-    Rev 1.6    2003/5/2 Â¤UÂ¤Ð˜ 03:39:38  DChang
+    Rev 1.6    2003/5/2 ¤U¤È 03:39:38  DChang
   Fix all compile warnings and hints.
 
 
@@ -292,14 +292,12 @@ uses
   IdContainers,
   IdAssignedNumbers,
   IdSocketHandle,
-  IdIOHandlerSocket,
   IdGlobal,
   IdGlobalProtocols,
   IdBaseComponent,
   IdComponent,
   IdContext,
   IdUDPBase,
-  IdResourceStrings,
   IdExceptionCore,
   IdDNSResolver,
   IdUDPServer,
@@ -3223,7 +3221,7 @@ begin
             AppendBytes(TempAnswer, LocalAnswer);
             LocalAnswer := TempAnswer;
           end else begin
-            // Â§Ð´Cache
+            // §äCache
             TempAnswer := LocalAnswer;
             ifAdditional := (QType <> TypeCode_A) or (QType <> TypeCode_AAAA);
 

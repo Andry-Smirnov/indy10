@@ -39,7 +39,7 @@
   the server-protocol-files
 
   Rev 1.3    3/13/2003 09:14:44 PM  JPMugaas
-  Added property suggested by Henrick HellstrÑ†m (StreamSec) for checking a
+  Added property suggested by Henrick Hellström (StreamSec) for checking a
   certificate against a URL provided by a user.
 
   Rev 1.2    3/13/2003 11:55:44 AM  JPMugaas
@@ -65,7 +65,6 @@ uses
   IdIOHandler,
   IdIOHandlerSocket,
   IdIOHandlerStack,
-  IdScheduler,
   IdServerIOHandler,
   IdYarn;
 
@@ -76,6 +75,8 @@ type
     fPassThrough: Boolean;
     fIsPeer : Boolean;
     FURIToCheck : String;
+    function GetProxyTargetHost: string;
+    function GetURIHost : string;
     procedure InitComponent; override;
     function RecvEnc(var ABuffer: TIdBytes): Integer; virtual; abstract;
     function SendEnc(const ABuffer: TIdBytes; const AOffset, ALength: Integer): Integer; virtual; abstract;
@@ -90,7 +91,7 @@ type
     property PassThrough: Boolean read fPassThrough write SetPassThrough;
     property IsPeer : Boolean read fIsPeer write fIsPeer;
      {
-Pasted from private corresponance from Henrick HellstrÑ†m - StreamSec http://www.streamsec.com
+Pasted from private corresponance from Henrick Hellström - StreamSec http://www.streamsec.com
 
  This property should be set to the exact value of the URI passed to e.g.
 TIdHTTP.Get and should not be used or modified by any code outside of
@@ -161,7 +162,7 @@ var
 implementation
 
 uses
-  SysUtils;
+  SysUtils, IdCustomTransparentProxy, IdURI;
 
 {$I IdSymbolDeprecatedOff.inc}
 
@@ -184,6 +185,49 @@ end;
 {$I IdSymbolDeprecatedOn.inc}
 
 { TIdSSLIOHandlerSocketBase }
+
+function TIdSSLIOHandlerSocketBase.GetProxyTargetHost: string;
+var
+  // under ARC, convert a weak reference to a strong reference before working with it
+  LTransparentProxy, LNextTransparentProxy: TIdCustomTransparentProxy;
+begin
+  Result := '';
+  // RLebeau: not reading from the property as it will create a
+  // default Proxy object if one is not already assigned...
+  LTransparentProxy := FTransparentProxy;
+  if Assigned(LTransparentProxy) then
+  begin
+    if LTransparentProxy.Enabled then
+    begin
+      repeat
+        LNextTransparentProxy := LTransparentProxy.ChainedProxy;
+        if not Assigned(LNextTransparentProxy) then
+          Break;
+        if not LNextTransparentProxy.Enabled then
+          Break;
+        LTransparentProxy := LNextTransparentProxy;
+      until False;
+      Result := LTransparentProxy.Host;
+    end;
+  end;
+
+end;
+
+function TIdSSLIOHandlerSocketBase.GetURIHost : string;
+var
+  LURI: TIdURI;
+begin
+  Result := '';
+  if URIToCheck <> '' then
+  begin
+    LURI := TIdURI.Create(URIToCheck);
+    try
+      Result := LURI.Host;
+    finally
+      LURI.Free;
+    end;
+  end;
+end;
 
 procedure TIdSSLIOHandlerSocketBase.InitComponent;
 begin

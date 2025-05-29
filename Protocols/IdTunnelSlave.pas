@@ -220,7 +220,7 @@ begin
 
   Sender := TSender.Create;
   SClient := TIdTCPClient.Create(nil);
-// POZOR MOÐ‹NA NAPAKA
+// POZOR MOŽNA NAPAKA
 //  SClient.OnStatus := self.DoStatus;  ORIGINAL
   SClient.OnStatus := self.OnStatus; // TODO: assign DoStatus() instead of the handler directly...
 

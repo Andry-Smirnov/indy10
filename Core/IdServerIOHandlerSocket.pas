@@ -16,7 +16,7 @@
   $Log$
 }
 {
-  Rev 1.16    23.3.2005 Ð³. 20:52:00  DBondzhev
+  Rev 1.16    23.3.2005 ã. 20:52:00  DBondzhev
   LIOHandler is not released if exception is thrown while listening for
   incomming connection.
 
@@ -79,7 +79,7 @@ interface
 {$i IdCompilerDefines.inc}
 
 uses
-  IdSocketHandle, IdGlobal, IdThread, IdServerIOHandler, IdStackConsts, IdIOHandler, IdScheduler,
+  IdSocketHandle, IdGlobal, IdThread, IdServerIOHandler, IdIOHandler,
   IdIOHandlerSocket, IdYarn;
 
 type

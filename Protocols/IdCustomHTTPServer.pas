@@ -84,7 +84,7 @@
   Rev 1.23    1/21/2004 1:57:30 PM  JPMugaas
   InitComponent
 
-  Rev 1.22    21.1.2004 Ð³. 13:22:18  DBondzhev
+  Rev 1.22    21.1.2004 ã. 13:22:18  DBondzhev
   Fix for Dccil bug
 
   Rev 1.21    10/25/2003 06:51:44 AM  JPMugaas
@@ -112,7 +112,7 @@
   Moved ServeFile and SmartServeFile to TIdHTTPResponseInfo.
   Added TIdHTTPResponseInfo.HTTPServer field
 
-  Rev 1.13    05.6.2003 Ð³. 11:11:12  DBondzhev
+  Rev 1.13    05.6.2003 ã. 11:11:12  DBondzhev
   Socket exceptions should  not be stopped after DoCommandGet.
 
     Rev 1.12    4/9/2003 9:38:40 PM  BGooijen
@@ -458,7 +458,7 @@ type
     function DoHeadersAvailable(ASender: TIdContext; const AUri: String; AHeaders: TIdHeaderList): Boolean; virtual;
     procedure DoHeadersBlocked(ASender: TIdContext; AHeaders: TIdHeaderList; var VResponseNo: Integer; var VResponseText, VContentText: String); virtual;
     function DoHeaderExpectations(ASender: TIdContext; const AExpectations: String): Boolean; virtual;
-    function DoParseAuthentication(ASender: TIdContext; const AAuthType, AAuthData: String; var VUsername, VPassword: String): Boolean;
+    function DoParseAuthentication(ASender: TIdContext; const AAuthType, AAuthData: String; var VUsername, VPassword: String): Boolean; virtual;
     function DoQuerySSLPort(APort: TIdPort): Boolean; virtual;
     procedure DoSessionEnd(Sender: TIdHTTPSession); virtual;
     procedure DoSessionStart(Sender: TIdHTTPSession); virtual;

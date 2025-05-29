@@ -262,8 +262,8 @@ uses
   IdBaseComponent,
   IdComponent,IdContext, IdGlobal, IdException,
   IdIntercept, IdIOHandler, IdIOHandlerStack,
-  IdReply, IdScheduler, IdSchedulerOfThread, IdServerIOHandler,
-  IdServerIOHandlerStack, IdSocketHandle, IdStackConsts, IdTCPConnection,
+  IdReply, IdScheduler, IdServerIOHandler,
+  IdServerIOHandlerStack, IdSocketHandle, IdTCPConnection,
   IdThread, IdYarn, SysUtils;
 
 const
@@ -410,7 +410,7 @@ type
 //See: http://tangentsoft.net/wskfaq/intermediate.html#disable-nagle and
 //   http://tangentsoft.net/wskfaq/articles/lame-list.html#item19
 //The Nagle algorithm reduces the amount of needless traffic.  Disabling Nagle
-//programâ€™s throughput to degrade.
+//program’s throughput to degrade.
     property UseNagle: boolean read FUseNagle write FUseNagle default true;
     property TerminateWaitTime: Integer read FTerminateWaitTime write FTerminateWaitTime default 5000;
     property Scheduler: TIdScheduler read FScheduler write SetScheduler;
@@ -429,7 +429,7 @@ uses
     {$ENDIF}
   {$ENDIF}
   IdGlobalCore,
-  IdResourceStringsCore, IdReplyRFC,
+  IdResourceStringsCore,
   IdSchedulerOfThreadDefault, IdStack,
   IdThreadSafe;
 
@@ -988,6 +988,9 @@ end;
 {$IFDEF LINUX} // should this be UNIX instead?
   {$UNDEF CanCreateTwoBindings}
 {$ENDIF}
+{$IFDEF SOLARIS}
+  {$UNDEF CanCreateTwoBindings}
+{$ENDIF}
 {$IFDEF ANDROID}
   {$UNDEF CanCreateTwoBindings}
 {$ENDIF}
@@ -1006,6 +1009,9 @@ begin
   if Bindings.Count = 0 then begin
     // TODO: on systems that support dual-stack sockets, create a single
     // Binding object that supports both IPv4 and IPv6 on the same socket...
+
+    // TODO: remove the CanCreateTwoBindings conditional and just attempt
+    // both IPv4 and IPv6 and ignore any failures...
 
     {$IFDEF CanCreateTwoBindings}LBinding := {$ENDIF}Bindings.Add; // IPv4 or IPv6 by default
 

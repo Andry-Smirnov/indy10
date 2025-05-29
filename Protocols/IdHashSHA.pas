@@ -16,15 +16,15 @@
   $Log$
 }
 {
-  Rev 1.6    2003-10-12 15:25:50  HHellstrÑ†m
+  Rev 1.6    2003-10-12 15:25:50  HHellström
   Comments added
 
-  Rev 1.5    2003-10-12 03:08:24  HHellstrÑ†m
+  Rev 1.5    2003-10-12 03:08:24  HHellström
   New implementation; copyright changed. The source code formatting has been
   adjusted to fit the margins. The new implementation is faster on dotNet
   compared to the old one, but is slightly slower on Win32.
 
-  Rev 1.4    2003-10-11 18:44:54  HHellstrÑ†m
+  Rev 1.4    2003-10-11 18:44:54  HHellström
   Range checking and overflow checking disabled in the Coder method only. The
   purpose of this setting is to force the arithmetic operations performed on
   LongWord variables to be modulo $100000000. This hack entails reasonable
@@ -33,7 +33,7 @@
   Rev 1.3    10/10/2003 2:20:56 PM  GGrieve
   turn range checking off
 
-  Rev 1.2    2003-09-21 17:31:02  HHellstrÑ†m    Version: 1.2
+  Rev 1.2    2003-09-21 17:31:02  HHellström    Version: 1.2
   DotNET compatibility
 
   Rev 1.1    2/16/2003 03:19:18 PM  JPMugaas
@@ -156,7 +156,7 @@ end;
 
 class function TIdHashSHA1.IsIntfAvailable: Boolean;
 begin
-  Result := IsHashingIntfAvail and  IsSHA1HashIntfAvail;
+  Result := (inherited IsIntfAvailable) and IsSHA1HashIntfAvail;
 end;
 
 {$i IdOverflowCheckingOff.inc} // Operations performed modulo $100000000
@@ -478,7 +478,7 @@ end;
 
 class function TIdHashSHA224.IsAvailable: Boolean;
 begin
-  Result := IsHashingIntfAvail and IsSHA224HashIntfAvail;
+  Result := IsIntfAvailable and IsSHA224HashIntfAvail;
 end;
 {$ENDIF}
 
@@ -491,7 +491,7 @@ end;
 
 class function TIdHashSHA256.IsAvailable : Boolean;
 begin
-  Result := IsHashingIntfAvail and  IsSHA256HashIntfAvail;
+  Result := IsIntfAvailable and IsSHA256HashIntfAvail;
 end;
 
 { TIdHashSHA384 }
@@ -503,7 +503,7 @@ end;
 
 class function TIdHashSHA384.IsAvailable: Boolean;
 begin
-  Result := IsHashingIntfAvail and  IsSHA384HashIntfAvail;
+  Result := IsIntfAvailable and IsSHA384HashIntfAvail;
 end;
 
 { TIdHashSHA512 }
@@ -515,7 +515,7 @@ end;
 
 class function TIdHashSHA512.IsAvailable: Boolean;
 begin
-  Result := IsHashingIntfAvail and  IsSHA512HashIntfAvail;
+  Result := IsIntfAvailable and IsSHA512HashIntfAvail;
 end;
 
 end.
