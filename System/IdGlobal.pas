@@ -6320,7 +6320,9 @@ end;
 function IdPorts: TIdPortList;
 var
   s: string;
-  idx, iPosSlash: {$IFDEF BYTE_COMPARE_SETS}Byte{$ELSE}Integer{$ENDIF};
+  //idx, iPosSlash: {$IFDEF BYTE_COMPARE_SETS}Byte{$ELSE}Integer{$ENDIF};
+  idx: Integer;
+  iPosSlash: Integer;
   i: {$IFDEF HAS_GENERICS_TList}Integer{$ELSE}PtrInt{$ENDIF};
   iPrev: PtrInt;
   sl: TStringList;
