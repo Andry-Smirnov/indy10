@@ -5,9 +5,9 @@ autocrlf=true
 
 # Explicitly declare text files you want to always be normalized and converted
 # to native line endings on checkout.
-*.cpp text
-*.c text
-*.h text
+*.cpp text eol=lf
+*.c text eol=lf
+*.h text eol=lf
 
 # Declare files that will always have LF line endings on checkout.
 *.md text eol=lf
