@@ -20,6 +20,12 @@
           <UseAnsiStrings Value="False"/>
         </SyntaxOptions>
       </Parsing>
+      <CodeGeneration>
+        <SmartLinkUnit Value="True"/>
+        <Optimizations>
+          <OptimizationLevel Value="4"/>
+        </Optimizations>
+      </CodeGeneration>
       <Other>
         <CustomOptions Value="$(IDEBuildOptions)
 -dDEBUG"/>
