@@ -1,27 +1,24 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="2">
+  <Package Version="5">
     <PathDelim Value="\"/>
     <Name Value="indylaz"/>
+    <Type Value="DesignTime"/>
+    <AddToProjectUsesSection Value="True"/>
     <Author Value="Chad Z. Hower (Kudzu) and the Indy Pit Crew - http://www.indyproject.org/"/>
     <CompilerOptions>
-      <Version Value="5"/>
+      <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
+        <OtherUnitFiles Value="Core;Core\Res;Design;FCL;Protocols;Protocols\ZLib;Security;SuperCore;System"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <Parsing>
         <SyntaxOptions>
-          <D2Extensions Value="False"/>
-          <DelphiCompat Value="True"/>
+          <SyntaxMode Value="Delphi"/>
+          <UseAnsiStrings Value="False"/>
         </SyntaxOptions>
       </Parsing>
-      <CodeGeneration>
-        <Generate Value="Faster"/>
-      </CodeGeneration>
-      <Other>
-        <CompilerPath Value="$(CompPath)"/>
-      </Other>
     </CompilerOptions>
     <License Value="Duel License
 
@@ -35,24 +32,24 @@ Redistributions in binary form must reproduce the above copyright notice, this l
 
 No personal names or organizations names associated with the Indy project may be used to endorse or promote products derived from this software without specific prior written permission of the specific individual or organization. 
 
-THIS SOFTWARE IS PROVIDED BY Chad Z. Hower (Kudzu) and the Indy Pit Crew &amp;quot;AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THIS SOFTWARE IS PROVIDED BY Chad Z. Hower (Kudzu) and the Indy Pit Crew &amp;quot;AS IS&apos;&apos; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 "/>
-    <Version Major="10" Minor="5" Release="8" Build="0"/>
-        <Files Count="15">
+    <Version Major="10" Minor="5" Release="8"/>
+    <Files Count="15">
       <Item1>
-        <Filename Value="IdAboutVCL.pas"/>
+        <Filename Value="Core\IdAboutVCL.pas"/>
         <UnitName Value="IdAboutVCL"/>
       </Item1>
       <Item2>
-        <Filename Value="IdAboutVCL.lrs"/>
+        <Filename Value="Core\IdAboutVCL.lrs"/>
         <Type Value="LRS"/>
       </Item2>
       <Item3>
-        <Filename Value="IdAntiFreeze.pas"/>
+        <Filename Value="Core\IdAntiFreeze.pas"/>
         <UnitName Value="IdAntiFreeze"/>
       </Item3>
       <Item4>
-        <Filename Value="IdCoreDsnRegister.pas"/>
+        <Filename Value="Core\IdCoreDsnRegister.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="IdCoreDsnRegister"/>
       </Item4>
@@ -61,50 +58,50 @@ THIS SOFTWARE IS PROVIDED BY Chad Z. Hower (Kudzu) and the Indy Pit Crew &amp;qu
         <UnitName Value="IdCoreSelectionEditors"/>
       </Item5>
       <Item6>
-        <Filename Value="IdDsnCoreResourceStrings.pas"/>
+        <Filename Value="Core\IdDsnCoreResourceStrings.pas"/>
         <UnitName Value="IdDsnCoreResourceStrings"/>
       </Item6>
       <Item7>
-        <Filename Value="IdDsnPropEdBindingVCL.pas"/>
+        <Filename Value="Core\IdDsnPropEdBindingVCL.pas"/>
         <UnitName Value="IdDsnPropEdBindingVCL"/>
       </Item7>
       <Item8>
-        <Filename Value="IdDsnRegister.pas"/>
+        <Filename Value="Protocols\IdDsnRegister.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="IdDsnRegister"/>
       </Item8>
       <Item9>
-        <Filename Value="IdDsnResourceStrings.pas"/>
+        <Filename Value="Protocols\IdDsnResourceStrings.pas"/>
         <UnitName Value="IdDsnResourceStrings"/>
       </Item9>
       <Item10>
-        <Filename Value="IdDsnSASLListEditorFormVCL.pas"/>
+        <Filename Value="Protocols\IdDsnSASLListEditorFormVCL.pas"/>
         <UnitName Value="IdDsnSASLListEditorFormVCL"/>
       </Item10>
       <Item11>
-        <Filename Value="IdDsnSASLListEditorFormVCL.lrs"/>
+        <Filename Value="Protocols\IdDsnSASLListEditorFormVCL.lrs"/>
         <Type Value="LRS"/>
       </Item11>
       <Item12>
-        <Filename Value="IdRegister.pas"/>
+        <Filename Value="Protocols\IdRegister.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="IdRegister"/>
       </Item12>
       <Item13>
-        <Filename Value="IdRegister.lrs"/>
+        <Filename Value="Protocols\IdRegister.lrs"/>
         <Type Value="LRS"/>
       </Item13>
       <Item14>
-        <Filename Value="IdRegisterCore.pas"/>
+        <Filename Value="Core\IdRegisterCore.pas"/>
         <HasRegisterProc Value="True"/>
         <UnitName Value="IdRegisterCore"/>
       </Item14>
       <Item15>
-        <Filename Value="IdRegisterCore.lrs"/>
+        <Filename Value="Core\IdRegisterCore.lrs"/>
         <Type Value="LRS"/>
       </Item15>
     </Files>
-    <Type Value="DesignTime"/>
+    <CompatibilityMode Value="True"/>
     <RequiredPkgs Count="3">
       <Item1>
         <PackageName Value="LCL"/>
@@ -118,11 +115,10 @@ THIS SOFTWARE IS PROVIDED BY Chad Z. Hower (Kudzu) and the Indy Pit Crew &amp;qu
       </Item3>
     </RequiredPkgs>
     <UsageOptions>
-      <UnitPath Value="$(PkgOutDir)\"/>
+      <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
     <PublishOptions>
       <Version Value="2"/>
-      <IgnoreBinaries Value="False"/>
     </PublishOptions>
   </Package>
 </CONFIG>
