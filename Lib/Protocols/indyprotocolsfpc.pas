@@ -121,6 +121,7 @@ uses
   IdHeaderCoderBase,
   IdHeaderCoderIndy,
   IdHeaderCoderPlain,
+  IdHeaderCoderUTF,
   IdHeaderList,
   IdIMAP4,
   IdIMAP4Server,
@@ -148,7 +149,6 @@ uses
   IdMessageCoderXXE,
   IdMessageCoderYenc,
   IdMessageCollection,
-  IdMessageHelper,
   IdMessageParts,
   IdMultipartFormData,
   IdNNTP,
@@ -231,9 +231,4 @@ uses
 
 implementation
 
-{
-disable hints about unused units.  This unit just causes
-FreePascal to compile implicitly listed units in a package.
-}
-{$hints off}
 end.
