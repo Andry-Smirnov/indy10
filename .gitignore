@@ -70,7 +70,7 @@ modules/
 
 # Lazarus
 backup/
-lib/
+#lib/
 
 # MacOS thumbnails
 .DS_Store
