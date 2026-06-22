@@ -1,0 +1,15 @@
+Core\IdAboutVCL.pas
+Core\IdAboutVCL.lrs
+Core\IdAntiFreeze.pas
+Core\IdCoreDsnRegister.pas
+Core\IdCoreSelectionEditors.pas
+Core\IdDsnCoreResourceStrings.pas
+Core\IdDsnPropEdBindingVCL.pas
+Protocols\IdDsnRegister.pas
+Protocols\IdDsnResourceStrings.pas
+Protocols\IdDsnSASLListEditorFormVCL.pas
+Protocols\IdDsnSASLListEditorFormVCL.lrs
+Protocols\IdRegister.pas
+Protocols\IdRegister.lrs
+Core\IdRegisterCore.pas
+Core\IdRegisterCore.lrs
